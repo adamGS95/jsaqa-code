@@ -1,19 +1,40 @@
 {
-  "name": "jsaqa_3",
+  "name": "jest-coverage-project",
   "version": "1.0.0",
-  "description": "jest test",
+  "description": "Project with Jest test coverage",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --collectCoverage"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ]
   },
   "keywords": [
     "jest",
-    "test",
-    "jsaqa"
+    "testing",
+    "coverage"
   ],
-  "author": "omelnikova",
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^27.3.1"
-  }
+  "author": "Your Name",
+  "license": "MIT"
 }
